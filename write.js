@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     const entryForm = document.getElementById('entryForm');
     const result = document.getElementById('result');
+    const deleteButton = document.getElementById('deleteWord');
     getLanguages();
 
     entryForm.addEventListener('submit', function (event) {
@@ -58,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
             .catch(err => console.error(err));
     }
 
-    function deleteWord() {
+    deleteButton.addEventListener('click', () => {
         const word = document.getElementById('word').value;
         const options = {
             method: 'DELETE',
@@ -72,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             })
             .catch(err => console.error(err));
-    }
+    });
 
     function getLanguages() {
         fetch('https://lab6-backend-zj45.onrender.com/api/v1/languages')
