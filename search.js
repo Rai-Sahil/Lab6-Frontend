@@ -11,7 +11,7 @@ searchForm.addEventListener('submit', (e) => {
         headers: { 'Content-Type': 'application/json' }
     };
 
-    fetch(`http://localhost:3000/api/v1/definition/${word}`, options)
+    fetch(`https://lab6-backend-zj45.onrender.com/api/v1/definition/${word}`, options)
         .then(res => res.json())
         .then(res => {
             if (res.message) {

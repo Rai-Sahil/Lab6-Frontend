@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
             headers: { 'Content-Type': 'application/json' }
         };
 //lab6-backend-zj45.onrender.com/api/v1/definition
-        fetch('http://localhost:3000/api/v1/definition', options)
+        fetch('https://lab6-backend-zj45.onrender.com/api/v1/definition', options)
             .then(res => res.json())
             .then(res => {
                 console.log(res);
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
             body: JSON.stringify({ definition: definition, wordLanguage: wordLanguage, definitionLanguage: definitionLanguage }),
             headers: { 'Content-Type': 'application/json' }
         };
-        fetch(`http://localhost:3000/api/v1/definition/${word}`, options)
+        fetch(`https://lab6-backend-zj45.onrender.com/api/v1/definition/${word}`, options)
             .then(res => res.json())
             .then(res => {
                 if (res.message) {
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function () {
             method: 'DELETE',
             headers: { 'Content-Type': 'application/json' }
         };
-        fetch(`http://localhost:3000/api/v1/definition/${word}`, options)
+        fetch(`https://lab6-backend-zj45.onrender.com/api/v1/definition/${word}`, options)
             .then(res => res.json())
             .then(res => {
                 if (res.message) {
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     function getLanguages() {
-        fetch('http://localhost:3000/api/v1/languages')
+        fetch('https://lab6-backend-zj45.onrender.com/api/v1/languages')
             .then(res => res.json())
             .then(res => {
                 const wordLanguageSelect = document.getElementById('wordLanguage');
