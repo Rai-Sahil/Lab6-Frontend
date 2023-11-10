@@ -11,11 +11,14 @@ searchForm.addEventListener('submit', (e) => {
         headers: { 'Content-Type': 'application/json' }
     };
 
-    fetch(`https://lab6-backend-zj45.onrender.com/api/v1/definition/${word}`, options)
+    fetch(`http://localhost:3000/api/v1/definition/${word}`, options)
         .then(res => res.json())
         .then(res => {
             if (res.message) {
-                result.textContent = res.message + ' with ' + res.total + ' requests';
+                document.getElementById('definition').textContent = res.message
+                document.getElementById('wordLanguage').textContent = res.message;
+                document.getElementById('definitionLanguage').textContent = res.message;
+                document.getElementById('requests').textContent = 'Definition not found with ' + res.total + ' requests';
             } else {
                 console.log(res.definition);
                 document.getElementById('definition').textContent = res.definition[0].definition;
